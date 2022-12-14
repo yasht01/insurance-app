@@ -15,7 +15,7 @@ class _OnboardingViewState extends State<OnboardingView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: [
+        children: const [
           BackgroundView(),
           ForegroundView(),
         ],
