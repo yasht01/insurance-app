@@ -14,19 +14,19 @@ class BasicCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRect(
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-        child: Material(
-          //TODO: elevation not working
-          elevation: 15.0,
-          color: Colors.transparent,
+    return Material(
+      elevation: 10.0,
+      color: Colors.transparent,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(15.0),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
           child: Container(
             width: size.width * 0.8,
             height: size.height * 0.25,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.2),
-              borderRadius: BorderRadius.circular(10.0),
+              color: Colors.transparent,
+              borderRadius: BorderRadius.circular(15.0),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
