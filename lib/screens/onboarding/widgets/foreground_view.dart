@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:insurance_app/providers/onboarding/onboarding_data_provider.dart';
+import 'package:insurance_app/utils/enums.dart';
 
 import '../../../utils/constants.dart';
 import 'basic_card.dart';
@@ -27,21 +29,30 @@ class CardsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final onboardingData = OnboardingDataProvider.of(context).location;
+    final stackChildren = [
+      Positioned(
+        left: onboardingData == TranslucentCardLocation.front
+            ? kPositionMap[TranslucentCardLocation.back]![0]
+            : kPositionMap[TranslucentCardLocation.front]![0],
+        top: onboardingData == TranslucentCardLocation.front
+            ? kPositionMap[TranslucentCardLocation.back]![1]
+            : kPositionMap[TranslucentCardLocation.front]![1],
+        child: PersonalCard(size: size),
+      ),
+      Positioned(
+        left: kPositionMap[onboardingData]![0],
+        top: kPositionMap[onboardingData]![1],
+        child: BasicCard(size: size),
+      ),
+    ];
+
     return SizedBox(
       height: size.height * 0.45,
       child: Stack(
-        children: [
-          Positioned(
-            left: 30.0,
-            top: 80.0,
-            child: PersonalCard(size: size),
-          ),
-          Positioned(
-            left: 90.0,
-            top: 110.0,
-            child: BasicCard(size: size),
-          ),
-        ],
+        children: onboardingData == TranslucentCardLocation.back
+            ? stackChildren.reversed.toList()
+            : stackChildren,
       ),
     );
   }
@@ -57,6 +68,8 @@ class BottomForegroundView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = OnboardingDataProvider.of(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
@@ -98,8 +111,7 @@ class BottomForegroundView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               OutlinedButton(
-                //TODO:
-                onPressed: () {},
+                onPressed: () => provider.toggleLocation(),
                 style: OutlinedButton.styleFrom(
                   backgroundColor: Colors.black,
                   padding: const EdgeInsets.all(8.0),

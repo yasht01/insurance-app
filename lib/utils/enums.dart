@@ -1,0 +1,1 @@
+enum TranslucentCardLocation { front, back }

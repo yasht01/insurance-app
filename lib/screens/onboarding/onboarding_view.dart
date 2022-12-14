@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:insurance_app/providers/onboarding/onboarding_data_provider.dart';
 import 'widgets/background_view.dart';
 import 'widgets/foreground_view.dart';
 
@@ -14,11 +14,13 @@ class _OnboardingViewState extends State<OnboardingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: const [
-          BackgroundView(),
-          ForegroundView(),
-        ],
+      body: OnboardingDataProvider(
+        child: Stack(
+          children: const [
+            BackgroundView(),
+            ForegroundView(),
+          ],
+        ),
       ),
     );
   }
