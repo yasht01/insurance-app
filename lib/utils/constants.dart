@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:insurance_app/utils/enums.dart';
+
+import '../utils/enums.dart';
 
 const kPrimaryColor = Color(0xFF00E0C8);
 const kSecondaryColor = Color(0xFF3A364D);

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:insurance_app/providers/onboarding/onboarding_data_provider.dart';
-import 'package:insurance_app/utils/enums.dart';
+
+import '../../../providers/onboarding/onboarding_data_provider.dart';
+import '../../../screens/onboarding/widgets/basic_card.dart';
+import '../../../utils/enums.dart';
 
 import '../../../utils/constants.dart';
-import 'basic_card.dart';
+import 'family_card.dart';
 import 'personal_card.dart';
 
 class ForegroundView extends StatelessWidget {
@@ -48,7 +50,7 @@ class CardsView extends StatelessWidget {
     ];
 
     return SizedBox(
-      height: size.height * 0.45,
+      height: size.height * 0.5,
       child: Stack(
         children: onboardingData == TranslucentCardLocation.back
             ? stackChildren.reversed.toList()
@@ -75,7 +77,7 @@ class BottomForegroundView extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            margin: EdgeInsets.only(top: size.height * 0.15),
+            margin: EdgeInsets.only(top: size.height * 0.1),
             child: RichText(
               text: const TextSpan(
                 text: 'Best Insurance\nPolicy Management\nApp',

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:insurance_app/screens/onboarding/onboarding_view.dart';
+
+import '../screens/onboarding/onboarding_view.dart';
 
 void main() {
   runApp(const AppWidget());
@@ -8,7 +9,6 @@ void main() {
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(

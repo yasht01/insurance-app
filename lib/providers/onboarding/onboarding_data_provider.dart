@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:insurance_app/utils/enums.dart';
+
+import '../../utils/enums.dart';
 
 class OnboardingDataProvider extends StatefulWidget {
   final Widget child;

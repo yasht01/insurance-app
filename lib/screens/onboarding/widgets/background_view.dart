@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:insurance_app/utils/custom_clipper.dart';
+
+import '../../../utils/custom_clipper.dart';
 
 class BackgroundView extends StatelessWidget {
   const BackgroundView({super.key});

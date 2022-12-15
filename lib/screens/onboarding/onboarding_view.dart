@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:insurance_app/providers/onboarding/onboarding_data_provider.dart';
+
+import '../../providers/onboarding/onboarding_data_provider.dart';
 import 'widgets/background_view.dart';
 import 'widgets/foreground_view.dart';
 
