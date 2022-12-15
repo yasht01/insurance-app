@@ -31,20 +31,27 @@ class CardsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final onboardingData = OnboardingDataProvider.of(context).location;
+    final location = OnboardingDataProvider.of(context).location;
     final stackChildren = [
       Positioned(
-        left: onboardingData == TranslucentCardLocation.front
+        //* This card's location is specified by the position opposite
+        //* to the translucaent card. Example, this card will take the
+        //* [TranslucentCardLocation.back] associated offset values from [kPositionMap]
+        //* when [location] variable's value is [TranslucentCardLocation.front].
+        left: location == TranslucentCardLocation.front
             ? kPositionMap[TranslucentCardLocation.back]![0]
             : kPositionMap[TranslucentCardLocation.front]![0],
-        top: onboardingData == TranslucentCardLocation.front
+        top: location == TranslucentCardLocation.front
             ? kPositionMap[TranslucentCardLocation.back]![1]
             : kPositionMap[TranslucentCardLocation.front]![1],
         child: PersonalCard(size: size),
       ),
       Positioned(
-        left: kPositionMap[onboardingData]![0],
-        top: kPositionMap[onboardingData]![1],
+        left: kPositionMap[location]![0],
+        top: kPositionMap[location]![1],
+        //* Replace [BasicCard] widget with [FamilyCard] widget to
+        //* see the FamilyCard widget
+        //* FamilyCard(size: size),
         child: BasicCard(size: size),
       ),
     ];
@@ -52,7 +59,7 @@ class CardsView extends StatelessWidget {
     return SizedBox(
       height: size.height * 0.5,
       child: Stack(
-        children: onboardingData == TranslucentCardLocation.back
+        children: location == TranslucentCardLocation.back
             ? stackChildren.reversed.toList()
             : stackChildren,
       ),
@@ -70,6 +77,7 @@ class BottomForegroundView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //* used to toggle translucaent card location in [CardsView] widget
     final provider = OnboardingDataProvider.of(context);
 
     return Padding(

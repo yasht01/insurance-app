@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../utils/constants.dart';
 
+//* Custom Divider for all [Card] classes
+
 class CustomDivider extends StatelessWidget {
   const CustomDivider({super.key});
 

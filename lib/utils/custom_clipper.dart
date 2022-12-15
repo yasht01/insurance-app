@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//* Custom path clipper for background view of [OnboardingView] widget
+
 class CustomContainerClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {

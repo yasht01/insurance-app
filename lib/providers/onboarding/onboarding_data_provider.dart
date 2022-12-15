@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../utils/enums.dart';
 
+//* [StatefulWidget] wrapper for [InheritedWidget] to trigger widget rebuilds
+//* when data changes
 class OnboardingDataProvider extends StatefulWidget {
   final Widget child;
   const OnboardingDataProvider({Key? key, required this.child})

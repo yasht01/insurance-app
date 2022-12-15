@@ -15,6 +15,7 @@ class _OnboardingViewState extends State<OnboardingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //* OnboardingDataProvider provides the location for the 'name.' translucent card
       body: OnboardingDataProvider(
         child: Stack(
           children: const [

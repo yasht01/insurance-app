@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//* Custom Profile widget for [FamilyCard] widget
 class ProfileAvatar extends StatelessWidget {
   final Color backgroundColor;
   final Widget child;
