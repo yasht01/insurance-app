@@ -45,7 +45,7 @@ class CardsView extends StatelessWidget {
       Positioned(
         left: kPositionMap[onboardingData]![0],
         top: kPositionMap[onboardingData]![1],
-        child: BasicCard(size: size),
+        child: FamilyCard(size: size),
       ),
     ];
 

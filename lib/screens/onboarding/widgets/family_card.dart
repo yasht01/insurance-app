@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../utils/constants.dart';
 import '../../shared_widgets/custom_divider.dart';
 import 'custom_headline_widget.dart';
+import '../../shared_widgets/profile_avatar.dart';
 
 class FamilyCard extends StatelessWidget {
   const FamilyCard({
@@ -53,20 +54,20 @@ class FamilyCard extends StatelessWidget {
                       left: 20.0,
                       child: ProfileAvatar(
                         backgroundColor: Colors.white,
-                        foregroundColor: Colors.blue,
+                        child: FlutterLogo(),
                       ),
                     ),
                     Positioned(
                       left: 10.0,
                       child: ProfileAvatar(
                         backgroundColor: Colors.white,
-                        foregroundColor: Colors.red,
+                        child: FlutterLogo(),
                       ),
                     ),
                     Positioned(
                       child: ProfileAvatar(
                         backgroundColor: Colors.white,
-                        foregroundColor: Colors.amber,
+                        child: FlutterLogo(),
                       ),
                     ),
                   ]),
@@ -160,29 +161,6 @@ class FamilyCard extends StatelessWidget {
             ),
           )
         ],
-      ),
-    );
-  }
-}
-
-class ProfileAvatar extends StatelessWidget {
-  final Color backgroundColor;
-  final Color foregroundColor;
-
-  const ProfileAvatar({
-    Key? key,
-    required this.backgroundColor,
-    required this.foregroundColor,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return CircleAvatar(
-      radius: 20,
-      backgroundColor: backgroundColor,
-      child: CircleAvatar(
-        radius: 18,
-        backgroundColor: foregroundColor,
       ),
     );
   }
